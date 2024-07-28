@@ -1,0 +1,16 @@
+{
+  "name": "HAT-stack",
+  "version": "1.0.0",
+  "scripts": {
+    "tailwind:dev": "tailwindcss -i ./src/js/tailwind.css -o ./public/styles/main.css --watch ./src/templates",
+    "tailwind:prod": "tailwindcss -i ./src/js/tailwind.css -o ./public/styles/prod.css --minify",
+    "js:dev": "bun build --entrypoints src/js/*.js --outdir public/js --target browser --watch src/js/*.js",
+    "js:prod": "bun build --entrypoints src/js/*.js --outdir public/js --target browser --minify"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0"
+  }
+}
+

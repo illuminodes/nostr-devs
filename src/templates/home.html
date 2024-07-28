@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div id="main-section" class="flex flex-col gap-8">
+    <p class="select-none">{{Self::intro_text()}}</p>
+    <div class="flex flex-col gap-4">
+        <h2 class="text-lg font-bold select-none">Eventos Recientes y Proximos</h2>
+        <ul class="flex flex-col gap-4">
+            {% for event in Self::event_list() %}
+            <li class="flex flex-row gap-2">
+                <p class="font-semibold select-none">{{event.date}}</p>
+                <p class="select-none">-</p>
+                <a class="hover:text-nostr-light hover:cursor-pointer border-nostr-light border-b-2"
+                    href={{event.link}}>{{event.name}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

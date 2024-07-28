@@ -1,0 +1,26 @@
+[package]
+name = "nostrdevs-htmx"
+version = "0.1.0"
+edition = "2021"
+
+
+[lib]
+name = "hat"
+path = "src/hat/mod.rs"
+
+[[bin]]
+name = "nostrdevs-htmx"
+path = "src/main.rs"
+
+
+[dependencies]
+askama = { version = "0.12.1", features = ["with-axum"] }
+askama_axum = "0.4.0"
+axum = { version = "0.7.5", features = ["tokio"] }
+serde = "1.0.204"
+serde_json = "1.0.120"
+tokio = { version = "1.39.2", features = ["full"] }
+tower = "0.4.13"
+tower-http = { version = "0.5.2", features = ["fs", "trace"] }
+tracing = { version = "0.1.40", features = ["log"] }
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }

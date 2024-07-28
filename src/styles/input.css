@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'SourceCodePro';
+  src: url('../styles/fonts/SourceCodePro.ttf');
+}

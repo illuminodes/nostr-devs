@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+{% block title %}Event Page{% endblock %}
+{% block content %}
+<div class="align-bottom">
+    <h3 class="text-xl my-2">{{meetup.name}}</h3>
+    <div class="flex flex-row gap-4 items-baseline">
+        <p class="align-bottom">{{meetup.date}}</p>
+        <a href={{crate::consts::MEETUP_LINK}} target="_blank"
+            class="hover:text-nostr-light hover:cursor-pointer border-nostr-light border-b-2">Link de Evento
+        </a>
+    </div>
+    <h3 class="text-xl my-2 mt-6">Anuncios</h3>
+    <ul class="ml-8 list-disc">
+        <li>
+            <p>Respeta la privacidad de los demas.</p>
+        </li>
+        <li>
+            <p>Las preguntas y aportes son bienvenidas.</p>
+        </li>
+    </ul>
+    <h3 class="text-xl my-2 mt-6">Temas A Discutir</h3>
+    <ul class="ml-8 list-disc flex flex-col gap-2">
+
+        {% for topic in topics.topics %}
+        {% if topic.is_some() %}
+        <li>
+            <a href={{topic.unwrap().1}} target="_blank"
+                class="hover:text-nostr-light hover:cursor-pointer border-nostr-light border-b-2">{{topic.unwrap().0}}</a>
+
+        </li>
+        {% endif %}
+        {% endfor %}
+
+    </ul>
+</div>
+{% endblock %}
