@@ -1,14 +1,4 @@
-#[cfg(debug_assertions)]
-pub const CSS_STYLESHEET: &str = "../styles/output.css";
-
-#[cfg(not(debug_assertions))]
-pub const CSS_STYLESHEET: &str = "../styles/prod.css";
-
 pub const TCP_ADDRESS: &str = "0.0.0.0:4200";
-pub const INTRO_TEXT: &str = r#"
-    Somos una comunidad que busca crear espacios públicos para discutir y aprender sobre la red Nostr, 
-    un protocolo de comunicación descentralizado, seguro y abierto.
-"#;
 pub const GITHUB_LINK: &str = "https://github.com/illuminodes/nostr-devs";
 pub const X_LINK: &str = "https://twitter.com/illuminodes";
 pub const PRIMAL_LINK: &str =
@@ -36,11 +26,21 @@ pub const MEETUP_EVENTS: &[MeetupEvent] = &[
         date: "2024-07-31",
         link: "event/3",
     },
-    // MeetupEvent {
-    //     name: "Meetup #5",
-    //     date: "2024-08-28",
-    //     link: "event/4",
-    // },
+    MeetupEvent {
+        name: "Meetup #5",
+        date: "2024-08-28",
+        link: "event/4",
+    },
+    MeetupEvent {
+        name: "Meetup #6",
+        date: "2024-09-25",
+        link: "event/5",
+    },
+    MeetupEvent {
+        name: "Meetup #7",
+        date: "2024-10-30",
+        link: "event/6",
+    },
 ];
 pub const MEETUP_DETAILS: &[MeetupDetails] = &[
     MeetupDetails {
@@ -106,18 +106,42 @@ pub const MEETUP_DETAILS: &[MeetupDetails] = &[
             None,
         ],
     },
-    // MeetupDetails {
-    //     topics: [
-    //         Some(("Nostr y la Educacion", "https://www.nobsbitcoin.com/education/")),
-    //         Some(("Nostr y la Salud", "https://www.nobsbitcoin.com/health/")),
-    //         Some(("Nostr y la Economia", "https://www.nobsbitcoin.com/economy/")),
-    //         Some(("Nostr y la Politica", "https://www.nobsbitcoin.com/politics/")),
-    //         Some(("Nostr y la Cultura", "https://www.nobsbitcoin.com/culture/")),
-    //         Some(("Nostr y la Tecnologia", "https://www.nobsbitcoin.com/technology/")),
-    //         Some(("Nostr y la Ciencia", "https://www.nobsbitcoin.com/science/")),
-    //         Some(("Nostr y la Filosofia", "https://www.nobsbitcoin.com/philosophy/")),
-    //     ],
-    // },
+    MeetupDetails {
+        topics: [
+            Some(("Principios de Diseño con Nostr", "https://nostrdesign.org/docs/intro/")),
+            Some(("Fountain integra Nostr a su app", "https://x.com/fountain_app/status/1826293931480437194")),
+            Some(("Bostr inicia prueba beta", "https://njump.me/nevent1qqswjjgtdwxrndzrh4czn38c4ez6lh4vn7cazg2tf0q44ew3ja9gg8qpr4mhxue69uhkummnw3ez6ur4vgh8wetvd3hhyer9wghxuet5qy28wumn8ghj7un9d3shjtnyv9kh2uewd9hsygqw33q7h9rx2uvgafhj4tpkcf0rj0llf4q5n2pk0y3q6ejetlc04gtc2085")),
+            Some(("Nostr Safebox, una wallet virtual?", "https://tim-bouma.npub.pro/post/note10cp79wmxqhv9grhg5r0qkvnlaakt6pnky69mlgh2s5tt42q2pq8ss9y2qe/")),
+            Some(("Servicios Ilegales de Cryptologia", "https://x.com/wikileaks/status/1828151621651447908")),
+            Some(("Sexta ronda de donaciones OpenSats", "https://www.nobsbitcoin.com/opensats-announced-sixth-wave-of-nostr-grants/")),
+            None,
+            None,
+        ],
+    },
+    MeetupDetails {
+        topics: [
+            Some(("Descubre nuevos relevos", "https://relays.xport.top/")),
+            Some(("Relevos WoT - Redes de Confianza", "https://github.com/bitvora/wot-relay/tree/master")),
+            Some(("Costos de escalar un relevo", "https://njump.me/nevent1qvzqqqqqqypzqvhpsfmr23gwhv795lgjc8uw0v44z3pe4sg2vlh08k0an3wx3cj9qqs0dcf7243utuweq7fjxlezcrs282znkr73r2fhg0c6sqakeas0hmskyekr4")),
+            Some(("Controversia con NIP-44", "https://github.com/paulmillr/nip44/issues/17")),
+            Some(("Minions Stack", "https://github.com/42Pupusas/minion-stack")),
+            None,
+            None,
+            None,
+        ],
+    },
+    MeetupDetails {
+        topics: [
+            Some(("Nostr + RSS", "https://github.com/plantimals/rsslay")),
+            Some(("", "")),
+            Some(("", "")),
+            Some(("", "")),
+            Some(("", "")),
+            None,
+            None,
+            None,
+        ],
+    },
 ];
 
 #[derive(Clone)]

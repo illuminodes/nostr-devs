@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- HTMX -->
-    <script src="../js/htmx.min.js"></script>
-    <script src="../js/json-enc.js"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.3"></script>
 
     <!-- Tailwindcss -->
-    <link href={{crate::consts::CSS_STYLESHEET}} rel="stylesheet" />
+    <link href={{std::env!("CSS_STYLESHEET")}} rel="stylesheet" />
 
     <title>
         NostrDevs El Salvador

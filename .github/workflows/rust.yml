@@ -1,0 +1,36 @@
+name: Rust
+
+on:
+  push:
+    branches: [ "mera" ]
+  pull_request:
+    branches: [ "mera" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v4.1.0
+      
+    - name: Install tailwind
+      run: npm install -D tailwindcss
+
+    - name: Install tailwind deps (Forms)
+      run: npm install -D @tailwindcss/forms
+
+    - name: Install tailwind deps (Typography)
+      run: npm install -D @tailwindcss/typography  
+
+    - name: Run Tailwind
+      run: npx tailwindcss -i public/styles/input.css -o public/styles/output.css
+
+    - name: Build
+      run: cargo build --verbose
