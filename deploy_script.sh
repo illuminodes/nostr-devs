@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Define variables
-BINARY_NAME="nostrdevs-htmx" # Name of the binary file for your Rust project
-BUILD_DIR="$BINARY_NAME"     # Path for the new directory to store build artifacts
-SERVER_USER="illuminodes"                   # Your server's username
-SERVER_IP="50.116.20.217"                    # Your server's IP address
-SERVER_DEST_PATH="/home/illuminodes/"       # Destination path on the server
+BINARY_NAME="" # Name of the binary file for your Rust project
+BUILD_DIR=""     # Path for the new directory to store build artifacts
+SERVER_USER=""                   # Your server's username
+SERVER_IP=""                    # Your server's IP address
+SERVER_DEST_PATH=""       # Destination path on the server
 
 # Compile optimized release build
 echo "Building $BINARY_NAME Executable..."
@@ -18,8 +18,8 @@ if [ $? -ne 0 ]; then
 fi
 
 # Build JS files
-echo "Building JS/CSS files project..."
-tailwindcss -i ./src/styles/input.css -o ./public/styles/prod.css --minify
+# echo "Building JS/CSS files project..."
+# tailwindcss -i ./public/styles/input.css -o ./public/styles/prod.css --minify
 
 # Prepare the build directory
 echo "Preparing build directory..."
@@ -42,6 +42,9 @@ fi
 # Clean up local build directory
 echo "Cleaning up local build directory..."
 rm -rf "$BUILD_DIR"
+rm -rf ./public/styles/output*.css
+
+ssh "$SERVER_USER@$SERVER_IP" "bash -s" < remote_deploy.sh || error_exit "Remote script failed."
 
 echo "Deployment successful!"
 

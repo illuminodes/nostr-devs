@@ -4,7 +4,7 @@ pub const X_LINK: &str = "https://twitter.com/illuminodes";
 pub const PRIMAL_LINK: &str =
     "https://primal.net/p/npub1dmnzphvk097ahcpecwfeml08xw8sg2cj4vux55m5xalqtzz9t78q6k3kv6";
 
-pub const MEETUP_LINK: &str = "https://www.eventbrite.co/e/nostr-dev-reunion-el-salvador-aprender-y-conocer-y-desarrollar-tickets-962480684637?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=cp&aff=ebdsshcopyurl";
+pub const MEETUP_LINK: &str = "https://www.eventbrite.co/e/nostr-devs-reunion-el-salvador-aprender-y-conocer-y-desarrollar-tickets-1057503193519?aff=ebdssbdestsearch";
 pub const MEETUP_EVENTS: &[MeetupEvent] = &[
     MeetupEvent {
         name: "Meetup Inaugural",
@@ -133,10 +133,10 @@ pub const MEETUP_DETAILS: &[MeetupDetails] = &[
     MeetupDetails {
         topics: [
             Some(("Nostr + RSS", "https://github.com/plantimals/rsslay")),
-            Some(("", "")),
-            Some(("", "")),
-            Some(("", "")),
-            Some(("", "")),
+            Some(("Wavlake, musica en protocols abiertos", "https://wavlake.notion.site/Wavlake-Guide-e560557ae4ba4e06ac20c06fb33556a3")),
+            Some(("Lanzamiento de Pubky", "https://medium.com/@synonym_to/pubky-launch-260f36ba8fe3")),
+            Some(("Relevos usando Tor", "https://njump.me/nevent1qqsd4vcrymtav7jt8jmyykv7utevq004gu4datyusvn8a7p47yhf7lsprpmhxue69uhkummnw3ezuendwsh8w6t69e3xj730qgs04xzt6ldm9qhs0ctw0t58kf4z57umjzmjg6jywu0seadwtqqc75srqsqqqqqpg48y67")),
+            Some(("Un Pais construido sobre Open Source", "https://njump.me/nevent1qqs2axt6z58ta763qr8s2rrw2k2ymfzw8ayqqt5p5sy3pyux73trvpgprpmhxue69uhkummnw3ezuendwsh8w6t69e3xj730qgsrums8xku296t03nmx8ajdqjaee65nrt7v2l65ylp4hd59n62u3gsrqsqqqqqpqch0u7")),
             None,
             None,
             None,
