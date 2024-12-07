@@ -2,7 +2,7 @@ fn main() {
     #[cfg(debug_assertions)]
     println!(
         "cargo:rustc-env=CSS_STYLESHEET={}",
-        "public/styles/output.css"
+        "styles/output.css"
     );
     #[cfg(not(debug_assertions))]
     _production_css();
@@ -35,7 +35,7 @@ fn _rename_prod_file() -> String {
         .as_secs();
     let new_path = format!("public/styles/output-{}.css", output_hash);
     std::fs::rename("public/styles/prod.css", new_path).expect("Failed to rename output.css");
-    format!("../styles/output-{}.css", output_hash)
+    format!("styles/output-{}.css", output_hash)
 }
 fn _warm_reload_styles() {
     _cleanup();
@@ -66,7 +66,7 @@ fn _rename_output_file() -> String {
         .as_secs();
     let new_path = format!("public/styles/output-{}.css", output_hash);
     std::fs::rename("public/styles/output.css", new_path).expect("Failed to rename output.css");
-    format!("../styles/output-{}.css", output_hash)
+    format!("styles/output-{}.css", output_hash)
 }
 fn _cleanup() {
     // Delete old output file if it exists

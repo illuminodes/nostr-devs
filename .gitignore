@@ -1,4 +1,6 @@
-/target
+/**/target
 /node_modules
 *.lock
-/public/styles/output*.css
+/**/output*.css
+/dist
+*.sh
